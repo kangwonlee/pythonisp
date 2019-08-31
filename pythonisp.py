@@ -6,9 +6,9 @@ def cons(a, b):
 
 
 def car(a):
-    assert isinstance(a, (list, tuple)), f'undefinded for {repr(a)}'
-    assert 2 == len(a), f'undefinded for {repr(a)}'
-    return a[0]
+     assert isinstance(a, (list, tuple)), f'undefinded for {repr(a)}'
+     assert 2 == len(a), f'undefinded for {repr(a)}'
+     return a[0]
 
 
 def cdr(a):
