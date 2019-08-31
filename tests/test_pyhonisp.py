@@ -21,5 +21,11 @@ def test_cons():
     assert (('A', 'B'), 'C') == pythonisp.cons(('A', 'B'), 'C')
 
 
+def test_car():
+    assert 'A' == pythonisp.car(('A', 'B'))
+    assert 'A' == pythonisp.car(('A', ('B1', 'B2')))
+    assert ('A1', 'A2') == pythonisp.car((('A1', 'A2'), 'B'))
+
+
 if "__main__" == __name__:
     pytest.main()
