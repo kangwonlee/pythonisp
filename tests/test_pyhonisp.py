@@ -50,5 +50,10 @@ def test_cdr():
     assert 'undefinded' in str(exinfo.value)
 
 
+def test_cons_car_cdr():
+    assert 'x' == pythonisp.car(pythonisp.cons('x', 'y'))
+    assert 'y' == pythonisp.cdr(pythonisp.cons('x', 'y'))
+
+
 if "__main__" == __name__:
     pytest.main()
