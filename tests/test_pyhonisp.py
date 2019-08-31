@@ -31,6 +31,11 @@ def test_car():
     assert 'A' == pythonisp.car(('A', ('B1', 'B2')))
     assert ('A1', 'A2') == pythonisp.car((('A1', 'A2'), 'B'))
 
+    # https://doc.pytest.org/en/latest/assert.html
+    with pytest.raises(AssertionError) as exinfo:
+        pythonisp.car('A')
+    assert 'undefinded' in str(exinfo.value)
+
 
 def test_cdr():
     assert 'B' == pythonisp.cdr(('A', 'B'))
