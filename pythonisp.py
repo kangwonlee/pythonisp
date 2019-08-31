@@ -22,3 +22,7 @@ def eq(a, b):
      assert not isinstance(b, (list, tuple)), f'undefinded for {repr(b)}'
 
      return a == b
+
+
+def atom(a):
+     return isinstance(a, str)
