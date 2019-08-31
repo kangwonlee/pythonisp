@@ -55,5 +55,18 @@ def test_cons_car_cdr():
     assert 'y' == pythonisp.cdr(pythonisp.cons('x', 'y'))
 
 
+def test_eq():
+    assert pythonisp.eq('A', 'A')
+    assert not pythonisp.eq('A', 'B')
+
+    with pytest.raises(AssertionError) as exinfo:
+        pythonisp.eq('A', ('A', 'B'))
+    assert 'undefinded' in str(exinfo.value)
+
+    with pytest.raises(AssertionError) as exinfo:
+        pythonisp.eq(('A', 'B'), ('A', 'B'))
+    assert 'undefinded' in str(exinfo.value)
+
+
 if "__main__" == __name__:
     pytest.main()
