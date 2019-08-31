@@ -79,6 +79,13 @@ def test_atom():
     assert pythonisp.atom(pythonisp.car(('U', 'V')))
 
 
+def test_lst_ab():
+    result = pythonisp.lst('A', 'B')
+    expected = ('A', ('B', False))
+
+    assert expected == result
+
+
 def test_lst_abc():
     result = pythonisp.lst('A', 'B', 'C')
     expected = (
@@ -88,6 +95,13 @@ def test_lst_abc():
             )
         )
     )
+
+    assert expected == result
+
+
+def test_lst_ab_c():
+    result = pythonisp.lst(('A', 'B'), 'C')
+    expected = (('A', ('B', False), ('C', False)))
 
     assert expected == result
 
