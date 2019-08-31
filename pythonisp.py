@@ -15,3 +15,7 @@ def cdr(a):
      assert isinstance(a, (list, tuple)), f'undefinded for {repr(a)}'
      assert 2 == len(a), f'undefinded for {repr(a)}'
      return a[1]
+
+
+def eq(a, b):
+     return a == b
