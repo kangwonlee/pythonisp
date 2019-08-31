@@ -37,7 +37,9 @@ def test_cdr():
     assert ('B1', 'B2') == pythonisp.cdr(('A', ('B1', 'B2')))
     assert 'B' == pythonisp.cdr((('A1', 'A2'), 'B'))
 
-    assert pythonisp.cdr(('A', ('B1', 'B2')))
+    assert 'B1' == pythonisp.car(pythonisp.cdr(('A', ('B1', 'B2'))))
+    assert 'A' == pythonisp.car(pythonisp.cons('A', 'B1'))
+
 
 if "__main__" == __name__:
     pytest.main()
