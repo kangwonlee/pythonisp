@@ -33,7 +33,10 @@ def lst(*arg):
      if 1 == len(arg):
           result = (arg[0], False)
      elif 2 == len(arg):
-          result = (arg[0], lst(arg[1]))
+          if atom(arg[0]):
+               result = (arg[0], lst(arg[1]))
+          else:
+               result = (lst(*arg[0]), lst(arg[1]))
      elif 2 < len(arg):
           result = (arg[0], lst(*arg[1:]))
      else:
