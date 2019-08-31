@@ -106,5 +106,15 @@ def test_lst_ab_c():
     assert expected == result
 
 
+def test_lst_a_b_cd():
+    result = pythonisp.lst('A', 'B', ('C', 'D'))
+    expected = ('A', ('B', (('C', ('D', False)), False)))
+
+    assert expected == result, ("\n"
+        f"expected = {expected}\n"
+        f"result   = {result}\n"
+    )
+
+
 if "__main__" == __name__:
     pytest.main()
