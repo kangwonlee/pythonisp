@@ -18,4 +18,7 @@ def cdr(a):
 
 
 def eq(a, b):
+     assert not isinstance(a, (list, tuple)), f'undefinded for {repr(a)}'
+     assert not isinstance(b, (list, tuple)), f'undefinded for {repr(b)}'
+
      return a == b
