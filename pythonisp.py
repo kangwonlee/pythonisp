@@ -26,3 +26,17 @@ def eq(a, b):
 
 def atom(a):
      return isinstance(a, str)
+
+
+def lst(*arg):
+     assert arg, f'undefinded for {repr(arg)}'
+     if 1 == len(arg):
+          result = (arg[0], False)
+     elif 2 == len(arg):
+          result = (arg[0], lst(arg[1]))
+     elif 2 < len(arg):
+          result = (arg[0], lst(*arg[1:]))
+     else:
+          raise NotImplementedError
+     
+     return result
