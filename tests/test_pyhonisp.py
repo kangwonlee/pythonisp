@@ -79,5 +79,18 @@ def test_atom():
     assert pythonisp.atom(pythonisp.car(('U', 'V')))
 
 
+def test_lst_abc():
+    result = pythonisp.lst('A', 'B', 'C')
+    expected = (
+        'A', (
+            'B', (
+                'C', False
+            )
+        )
+    )
+
+    assert expected == result
+
+
 if "__main__" == __name__:
     pytest.main()
