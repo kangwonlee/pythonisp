@@ -27,5 +27,11 @@ def test_car():
     assert ('A1', 'A2') == pythonisp.car((('A1', 'A2'), 'B'))
 
 
+def test_cdr():
+    assert 'B' == pythonisp.cdr(('A', 'B'))
+    assert ('B1', 'B2') == pythonisp.cdr(('A', ('B1', 'B2')))
+    assert 'B' == pythonisp.cdr((('A1', 'A2'), 'B'))
+
+
 if "__main__" == __name__:
     pytest.main()
