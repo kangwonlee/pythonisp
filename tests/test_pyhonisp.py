@@ -73,5 +73,11 @@ def test_eq():
     assert 'undefinded' in str(exinfo.value)
 
 
+def test_atom():
+    assert pythonisp.atom('AVERYLONGSTRING')
+    assert not pythonisp.atom(('U', 'V'))
+    assert pythonisp.atom(pythonisp.car(('U', 'V')))
+
+
 if "__main__" == __name__:
     pytest.main()
