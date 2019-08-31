@@ -40,6 +40,15 @@ def test_cdr():
     assert 'B1' == pythonisp.car(pythonisp.cdr(('A', ('B1', 'B2'))))
     assert 'A' == pythonisp.car(pythonisp.cons('A', 'B1'))
 
+    # https://doc.pytest.org/en/latest/assert.html
+    with pytest.raises(AssertionError) as exinfo:
+        pythonisp.cdr('A')
+    assert 'undefinded' in str(exinfo.value)
+
+    with pytest.raises(AssertionError) as exinfo:
+        pythonisp.car(pythonisp.cdr('A'))
+    assert 'undefinded' in str(exinfo.value)
+
 
 if "__main__" == __name__:
     pytest.main()
