@@ -1,7 +1,11 @@
+# Reference
+# John McCarthy et. al., LISP 1.5 Programmer's Manual, Second Edition, The MIT Press, ISBN 0 262 13011 4
+
 import os
 import sys
 
 import pytest
+
 
 sys.path.insert(
     0,
@@ -12,6 +16,7 @@ sys.path.insert(
         )
     )
 )
+
 
 import pythonisp
 
@@ -32,6 +37,7 @@ def test_cdr():
     assert ('B1', 'B2') == pythonisp.cdr(('A', ('B1', 'B2')))
     assert 'B' == pythonisp.cdr((('A1', 'A2'), 'B'))
 
+    assert pythonisp.cdr(('A', ('B1', 'B2')))
 
 if "__main__" == __name__:
     pytest.main()
