@@ -101,7 +101,7 @@ def test_lst_abc():
 
 def test_lst_ab_c():
     result = pythonisp.lst(('A', 'B'), 'C')
-    expected = (('A', ('B', False), ('C', False)))
+    expected = (('A', ('B', False)), ('C', False))
 
     assert expected == result
 
